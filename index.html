@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+	<head>
+		<meta charset="UTF-8">
+		<title>Test Grainebook</title>
+		<meta name="Author" content="Thomas LOSBAR" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/bootstrap.css"/>
+		<link rel="stylesheet" href="css/font-awesome.min.css"/>
+
+		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	</head>
+	<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse">
+				<span class="pull-right"> Réalisé par Thomas LOSBAR</span>
+			</div><!--/.nav-collapse -->
+		</div><!--/.container -->
+	</div><!-- Fixed navbar -->
+
+
+	<div class="content">
+		<div class="container">
+			<div class="row">
+				<div id="saved" class="alert alert-success" role="alert" style="display: none">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				Votre article a bien été enregistré </div>
+			</div>
+			<div class="row">
+				<h1> Test Grainebook </h1>
+				<p>Voici un simple formulaire avec 2 champs, dans le premier champ vous pouvez écrire le titre d'un article, et dans le second le contenu de cet article (par exemple)<br/>
+					Ensuite vous pouvez prévisualiser de deux manière différentes votre article saisi avant de l'enregistrer: <br/>
+					- il y a un bouton 'Previsualisez' avec lequel vous pourrez voir l'article saisi dans un modal avant l'enregistrement final <br/>
+					- il y a une option 'Prévisualier en direct' avec laquelle vous pourrez voir les modifications de l'article instantanément avant d'enregistrer </p>
+			</div>
+			<div class="row">
+				<div id="contact-form" class="contact-form col-md-6">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="form-group">
+								<input type="text" class="form-control" name="Titre"  id="form-title" placeholder="Titre">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<textarea class="form-control textarea" rows="3" name="Texte" id="form-text" placeholder="Ecrire le texte ici"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-5 col-md-offset-5">
+							<div class="form-inline">
+								<div class="">
+									Prévisualisation en direct ? :
+									<div class="radio">
+									  <label>
+										<input type="radio" name="livePrev" id="livePrev1" value="yes" >
+										oui
+									  </label>
+									</div>
+									<div class="radio">
+									  <label>
+										<input type="radio" name="livePrev" id="livePrev2" value="no" checked>
+										non
+									  </label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2">
+						<button id="prev-btn" type="button" class="btn main-btn pull-right">Prévisualisez</button>
+						<button id="submit-prev-btn" type="submit" class="btn btn-primary pull-right" style="display: none;">Enregistrez</button>
+						</div>
+					</div>
+				</div>
+				<div id="live-prev" class="col-md-6" style="display: none">
+					<h2 id="live-prev-title"> </h2>
+					<p id="live-prev-text"> </p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="modal-prev" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title">Prévisualisation de la saisie</h4>
+		  </div>
+		  <div class="modal-body">
+			<h2 id="modal-prev-title">	</h2>
+			<p id="modal-prev-text">	</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+			<button id="submit-btn" type="button" class="btn btn-primary">Enregistrez</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+
+	<script src="js/bootstrap.js"></script>
+	<script src="js/action.js"></script>
+	</body>
+</html>
